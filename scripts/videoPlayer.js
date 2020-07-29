@@ -9,6 +9,9 @@ const videoPlayer = document.querySelector('.video-player'),
     videoTimePassed = document.querySelector('.video-time__passed'),
     videoTimeTotal = document.querySelector('.video-time__total');
 
+    const videoVolume = document.querySelector('.video-volume');
+    const videoFullscreen = document.querySelector('.video-fullscreen');
+
     const toggleIcon = () => {
         if (videoPlayer.paused) {
             videoButtonPlay.classList.remove('fa-pause');
@@ -77,4 +80,17 @@ const videoPlayer = document.querySelector('.video-player'),
 
         videoPlayer.currentTime = (value * duration) / 100;
     });
+
+    // раскрываю видео на полный экран
+    videoFullscreen.addEventListener('click', () => {
+        videoPlayer.requestFullscreen();
+    });
+
+    videoVolume.addEventListener('input', () => {
+        videoPlayer.volume = videoVolume.value / 100;
+    });
+
+    videoPlayer.volume = 0.5;
+
+    videoVolume.value = videoPlayer.volume * 100;
 };
