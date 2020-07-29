@@ -71,7 +71,7 @@ const videoPlayer = document.querySelector('.video-player'),
     });
 
     // при нажатии на бегунок перематывается видео
-    videoProgress.addEventListener('change', () => {
+    videoProgress.addEventListener('input', () => {
         const duration = videoPlayer.duration;
         const value = videoProgress.value;
 
