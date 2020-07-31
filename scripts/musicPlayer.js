@@ -110,6 +110,4 @@ export const musicPlayerInit = () => {
         const progress = (x / allWidth) * audioPlayer.duration;
         audioPlayer.currentTime = progress;
     });
-
-
 };
