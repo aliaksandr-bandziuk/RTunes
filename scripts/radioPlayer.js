@@ -91,4 +91,9 @@ export const radioPlayerInit = () => {
             audio.volume = prevVolume;
         }
     });
+
+    radioPlayerInit.stop = () => {
+        audio.pause();
+        changeIconPlay();
+    };
 };
